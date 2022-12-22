@@ -1,20 +1,9 @@
-function teraToGiga(volume) {
-    console.log(volume + 'TB는');
-    console.log(volume * 1024 + 'GB 입니다.');
+function bmiCalculator(name, weight, heigth) {
+    console.log(name + '님의 체질량지수는 ' + weight/(heigth*heigth/10000) + '입니다.')
   };
   
-  function teraToMega(volume) {
-    console.log(volume + 'TB는');
-    console.log(volume * 1024 * 1024 + 'MB 입니다.');
-  };
   
-  // TB -> GB 테스트
-  teraToGiga(2);
-  // TB -> MB 테스트
-  teraToMega(2);
-  
-  // 결과
-  // 2TB는
-  // 2048GB 입니다.
-  // 2TB는
-  // 2097152MB 입니다.
+  // 테스트 코드
+  bmiCalculator('홀쭉이', 43.52, 160);
+  bmiCalculator('코린이', 61.25, 175);
+  bmiCalculator('통통이', 77.76, 180);
