@@ -1,4 +1,13 @@
-console.log(15+5)
-console.log(4*5)
-console.log(23-8)
-console.log('Hello JS!')
+// 함수 선언
+function greetings() {
+    console.log('Hi');
+    console.log('안녕');
+    console.log('こんにちは');
+    console.log('你好');
+    console.log('Guten Tag');
+    console.log('Bonjour');
+    console.log('Buongiorno');
+};
+
+//함수 호출
+greetings();
