@@ -1,13 +1,4 @@
-// 함수 선언
-function greetings() {
-    console.log('Hi');
-    console.log('안녕');
-    console.log('こんにちは');
-    console.log('你好');
-    console.log('Guten Tag');
-    console.log('Bonjour');
-    console.log('Buongiorno');
-};
+// typeof 연산자
+console.log(typeof typeof 8);
 
-//함수 호출
-greetings();
+// typeof 연산자는 오른쪽에 있는 값의 자료형을 '문자열'로 반환하는 연산자 따라서 string 출력
