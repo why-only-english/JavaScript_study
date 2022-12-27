@@ -1,18 +1,10 @@
-function interestCalculator(amount, term, rate) {
-    let interest = amount * term * rate / 100;
-    return interest;
-  };
-  
-  // 조건 입력 테스트
-  let myMoney = 3650000; // 맡긴 금액 (원)
-  let saveTerm = 1; // 맡기는 기간 (년)
-  let interestRate = 4; // 이자율 (%)
-  
-  // 수령액 계산 테스트
-  let myInterest = interestCalculator(myMoney, saveTerm, interestRate);
-  let totalMoney = myMoney + myInterest;
-  
-  // 출력 테스트
-  console.log('맡긴 금액은 ' + myMoney + '원 입니다.');
-  console.log('이자는 ' + myInterest + '원 입니다.');
-  console.log('최종 받을 금액은 ' + totalMoney + '원 입니다.');
+function calcWage(name, time, wage) {
+  let total = time * wage;
+
+  console.log(`${name}님의 근무 시간은 총 ${time}시간이며, 최종 급여는 ${total}원 입니다.`); 
+}
+
+calcWage('김윤식', 208, 11340);
+calcWage('성규재', 175, 12160);
+calcWage('손태웅', 161, 13070);
+calcWage('허우선', 222, 10980);
