@@ -1,39 +1,32 @@
-// 나의 나이와, 나의 성별을 저장하는 변수
-let myAge = 26;
-let myGender = 'male';
+// 각 등급별 가격
+let VIPPrice = 15;
+let RPrice = 13;
+let SPrice = 10;
+let APrice = 8;
 
-// 호칭을 담은 변수
-let callOlderBrother = '형';
-let callOlderSister = '누나';
-let callFriend = '친구';
-let callYoungerSister = '여동생';
-let callYoungerBrother = '남동생';
-
-// 상대방의 나이와 성별에 따른 호칭을 리턴하는 함수 whatShouldICall를 완성하세요
-function whatShouldICallYou(yourAge, yourGender) {
-  if (yourAge > myAge && yourGender == 'male') {
-    return callOlderBrother;
-  } else if (yourAge > myAge && yourGender == 'female') {
-    return callOlderSister;
-  } else if (yourAge == myAge) {
-    return callFriend;
-  } else if (yourAge < myAge && yourGender == 'male') {
-    return callYoungerBrother;
-  } 
-  else if (yourAge < myAge && yourGender == 'female') {
-    return callYoungerSister;
-  } 
+// 각 등급에 맞는 가격을 출력하는 함수 checkPrice를 완성하세요
+function checkPrice(grade) {
+	switch(grade) {
+	  case 'R':
+      console.log(`${grade}석은 ${RPrice}만원 입니다.`);
+      break;
+    case 'VIP':
+      console.log(`${grade}석은 ${VIPPrice}만원 입니다.`);
+      break;
+    case 'S':
+      console.log(`${grade}석은 ${SPrice}만원 입니다.`);
+      break;
+    case 'A':
+      console.log(`${grade}석은 ${APrice}만원 입니다.`);
+      break;
+    default: 
+      console.log('VIP, R, S, A 중에서 하나를 선택해 주세요.');
+	}
 }
 
 // 테스트 코드
-let result1 = whatShouldICallYou(25, 'female');
-let result2 = whatShouldICallYou(20, 'male');
-let result3 = whatShouldICallYou(26, 'female');
-let result4 = whatShouldICallYou(30, 'male');
-let result5 = whatShouldICallYou(31, 'female');
-
-console.log(result1);
-console.log(result2);
-console.log(result3);
-console.log(result4);
-console.log(result5);
+checkPrice('R');
+checkPrice('VIP');
+checkPrice('S');
+checkPrice('A');
+checkPrice('B');
