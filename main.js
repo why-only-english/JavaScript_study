@@ -1,14 +1,12 @@
-const N = 180;
+let myVoca = {
+	function: '함수',
+	variable: '변수',
+	constant: '상수',
+	local: '지역의',
+	global: '전반적인'
+};
 
-let i = 1;
-let count = 0;
-
-while(i <= N) {
-  if(N % i === 0) {
-    console.log(i);
-    count++;
-  }
-  i++;
-}
-
-console.log(`${N}의 약수는 총 ${count}개 입니다.`)
+console.log(myVoca);
+console.log(myVoca.local);
+console.log(myVoca.constant);
+console.log(myVoca.function);
