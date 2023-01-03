@@ -1,26 +1,34 @@
-// 파라미터로 다른 변수에 담긴 값을 가져올 때는 대괄호 표기법을 사용해 주어야 함.
-let myVoca = {
-  addVoca: function (word, mean) {
-    myVoca[word] = mean;
-  },
-  deleteVoca: function (word) {
-    delete myVoca[word]
-  },
-  printVoca: function (word) {
-    console.log(`"${word}"의 뜻은 "${myVoca[word]}"입니다.`)
-  }
+let hyesoonScore = {
+	'데이터 모델링의 이해': 10,
+	'데이터 모델과 성능': 8,
+	'SQL 기본': 22,
+	'SQL 활용': 18,
+	'SQL 최적화 기본 원리': 20,
 };
 
-// addVoca메소드 테스트 코드
-myVoca.addVoca('parameter', '매개 변수');
-myVoca.addVoca('element', '요소');
-myVoca.addVoca('property', '속성');
-console.log(myVoca);
+let minsoonScore = {
+	'데이터 모델링의 이해': 14,
+	'데이터 모델과 성능': 8,
+	'SQL 기본': 12,
+	'SQL 활용': 4,
+	'SQL 최적화 기본 원리': 16,
+};
 
-// deleteVoca메소드 테스트 코드
-myVoca.deleteVoca('parameter');
-myVoca.deleteVoca('element');
-console.log(myVoca);
+function passChecker(scoreObject) {
+	// 여기에 코드를 작성하세요
+  let sum = 0;
+  
+  for (let key in scoreObject) {
+    sum += scoreObject[key];
+  }
+  
+  if (sum >= 60) {
+      console.log('축하합니다! 합격입니다!');
+    }
+  else {
+      console.log('아쉽지만 불합격입니다..');
+    }
+}
 
-// printVoca메소드 테스트 코드
-myVoca.printVoca('property');
+passChecker(hyesoonScore);
+passChecker(minsoonScore);
