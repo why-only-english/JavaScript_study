@@ -1,31 +1,26 @@
+// 파라미터로 다른 변수에 담긴 값을 가져올 때는 대괄호 표기법을 사용해 주어야 함.
 let myVoca = {
-	function: '함수',
-	variable: '변수',
-	constant: '상수',
-	local: '지역의',
-	global: '전반적인',
+  addVoca: function (word, mean) {
+    myVoca[word] = mean;
+  },
+  deleteVoca: function (word) {
+    delete myVoca[word]
+  },
+  printVoca: function (word) {
+    console.log(`"${word}"의 뜻은 "${myVoca[word]}"입니다.`)
+  }
 };
 
-// 1. 이미 외운 단어 3개를 삭제해 주세요
-delete myVoca.function;
-delete myVoca.constant;
-delete myVoca.local;
-
-
+// addVoca메소드 테스트 코드
+myVoca.addVoca('parameter', '매개 변수');
+myVoca.addVoca('element', '요소');
+myVoca.addVoca('property', '속성');
 console.log(myVoca);
-console.log(myVoca.constant);
 
-
-// 2. 오늘 외울 단어 4개를 추가해 주세요
-myVoca.extend = '확장하다';
-myVoca.export = '내보내다';
-myVoca.import = '불러오다';
-myVoca['default value'] = '기본값';
-
-
+// deleteVoca메소드 테스트 코드
+myVoca.deleteVoca('parameter');
+myVoca.deleteVoca('element');
 console.log(myVoca);
-console.log(myVoca.export);
 
-
-// 3. default value의 뜻을 출력해 주세요
-console.log(myVoca['default value'])
+// printVoca메소드 테스트 코드
+myVoca.printVoca('property');
