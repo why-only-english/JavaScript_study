@@ -1,9 +1,10 @@
-let today = new Date(2112, 8, 24);
-let jaeSangStart = new Date(2109, 7, 1);
+let celsiusTemps = [27, 25, 26, 22, 28, 27, 21];
+let fahrenheitTemps = [];
 
-function workDayCalc(startDate) {
-	let diff = today.getTime() - jaeSangStart.getTime();
-	console.log('오늘은 입사한 지 ' + (diff / 1000 / 60 / 60 / 24 + 1) + '일째 되는 날 입니다.')
+// 여기에 코드를 작성하세요
+for (i = 0; i < celsiusTemps.length; i++) {
+  fahrenheitTemps[i] = (celsiusTemps[i] * 9 / 5) + 32;
 }
 
-workDayCalc(jaeSangStart);
+// fahrenheitTemps 테스트
+console.log(fahrenheitTemps);
