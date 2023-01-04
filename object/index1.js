@@ -11,3 +11,7 @@ console.log(courseRanking[0]);
 
 console.log(courseRanking[length + 1]);
 console.log(courseRanking['length']);
+
+// splice(startIndex, deleteCount, item)
+courseRanking.splice(1, 1, 'nice', 'good');
+console.log(courseRanking);
