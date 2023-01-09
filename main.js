@@ -1,15 +1,18 @@
-function factorial(n) {
-  let result = 1;
-	
-  for(let i = 1; i <= n; i++) {
-    result *= i; 
+function isPalindrome(word) {
+  for (let i = 0; i < Math.floor(word.length / 2); i++) {
+    let left = word[i];
+    let right = word[word.length - 1 - i]
+    if (left != right) {
+      return false
+    }
   }
-	
-  return result;
+  return true
 }
 
 // 테스트 코드
-console.log(factorial(12));
-console.log(factorial(6));
-console.log(factorial(3));
-console.log(factorial(0));
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("stars"));
+console.log(isPalindrome("기러기"));
+console.log(isPalindrome("123321"));
+console.log(isPalindrome("hello"));
+console.log(isPalindrome("kayak"));
