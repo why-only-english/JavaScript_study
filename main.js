@@ -1,16 +1,15 @@
-function firstWords() {
-  let word = '';
-
-  for(const arg of arguments) {
-    word += arg[0];
+function ignoreFirst(first, ...others) {
+  for(const a of others) {
+     console.log(a);  
   }
-
-  console.log(word);
 }
 
+// function ignoreFirst(...rest){
+//   for(let i=1; i<rest.length; i++){
+//     console.log(rest[i]);
+//   }
+// }
 
-firstWords('나만', '없어', '고양이');
-firstWords('아니', '바나나말고', '라면먹어');
-firstWords('만두', '반으로', '잘라먹네', '부지런하다');
-firstWords('결국', '자바스크립트가', '해피한', '지름길');
-firstWords('빨간색', '주황색', '노란색', '초록색', '파란색', '남색', '보라색');
+ignoreFirst('1세대', '2세대', '3세대');
+ignoreFirst('곰팡이', '강아지', '고양이');
+ignoreFirst(20, 9, 18, 19, 30, 34, 40);
