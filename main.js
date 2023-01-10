@@ -1,18 +1,16 @@
-function isPalindrome(word) {
-  for (let i = 0; i < Math.floor(word.length / 2); i++) {
-    let left = word[i];
-    let right = word[word.length - 1 - i]
-    if (left != right) {
-      return false
-    }
+function firstWords() {
+  let word = '';
+
+  for(const arg of arguments) {
+    word += arg[0];
   }
-  return true
+
+  console.log(word);
 }
 
-// 테스트 코드
-console.log(isPalindrome("racecar"));
-console.log(isPalindrome("stars"));
-console.log(isPalindrome("기러기"));
-console.log(isPalindrome("123321"));
-console.log(isPalindrome("hello"));
-console.log(isPalindrome("kayak"));
+
+firstWords('나만', '없어', '고양이');
+firstWords('아니', '바나나말고', '라면먹어');
+firstWords('만두', '반으로', '잘라먹네', '부지런하다');
+firstWords('결국', '자바스크립트가', '해피한', '지름길');
+firstWords('빨간색', '주황색', '노란색', '초록색', '파란색', '남색', '보라색');
