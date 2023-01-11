@@ -1,35 +1,12 @@
-const quiz1 = {
-  question: '다음 중 스승의 날과 생일이 같은 인물은 누구일까요?',
-  example: [ '율곡 이이', '퇴계 이황', '세종대왕', '신사임당'],
-  answer: 3,
-  solution: '훈민정음 창제 등 우리나라 문화와 교육 발전에 남긴 업적이 가장 큰 인물이라는 평가와 함께, 이 시대의 스승이 세종대왕처럼 존경받았으면 하는 바람으로 세종대왕의 탄생일이 스승의 날로 지정되었습니다.',
-};
+const seoul = ['김영훈', '김윤수', '김동욱', '강대위', '김영준',
+  '김규식', '김태호', '김효신', '손효준', '김현승', '김재하', '김유나',
+  '김재훈', '김혜선', '김민환', '김규리', '김소원', '김우재', '최영준',
+  '김태순', '김종훈', '김성환', '김승용', '김지혜', '이승욱', '김도현',
+  '김승규', '윤하은', '김유진', '김정민', '김혜정', '김예진', '김여진',
+  '김성희', '김혜수', '김인선', '김상필', '김혜진', '서상원', '김상혜',
+  '김민기', '김그루', '김희지'];
 
-const quiz2 = {
-  question: '다음 중 희노애락에 속하지 않는 것은 무엇일까요?',
-  example: ['사랑', '기쁨', '즐거움'],
-  answer: 1,
-  solution: '희노애락에서의 애를 사랑 애(愛)라고 자칫 오해할 수가 있지만, 희노애락의 애는 슬플 애(哀)입니다. 기쁨은 기쁠 희(喜), 즐거움은 즐거울 락(樂)에 담겨 있습니다.',
-};
-
-function printQuiz({ question, example }) {
-  try {
-    let exMsg = '';
-    
-    for (let i = 0; i < example.length; i++) {
-    exMsg += `${i + 1}. ${example[i]}  `;
-    }
-    
-    console.log(question);
-    console.log(exMsg);
-  } catch(err) {
-    console.log(err.name);
-  }
-}
+const notKims = seoul.filter((el) => el[0] !== '김');
 
 // 테스트 코드
-printQuiz(quiz1);
-printQuiz(1);
-printQuiz("");
-printQuiz({});
-printQuiz(quiz2);
+console.log(notKims);
