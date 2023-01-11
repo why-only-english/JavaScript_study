@@ -1,16 +1,19 @@
-const macbook = {
-  title: '맥북 프로 air',
-  price: 369000,
-  memory: '16GB',
-  storage: '1TB SSD 저장 장치',
-  display: '16형 Retina 디스플레이',
-  'serial-num': 'ABCD',
-};
+function printMembers(members) {
+  try {
+    for (const member of members) {
+      console.log(member);
+    }
+  } catch (err) {
+    console.error(err);
+    alert(`${err.name}가 발생했습니다. 콘솔창을 확인해 주세요.`);
+  }
+}
 
-// const title = macbook.title;
-// const price = macbook.price;
-const { title: product, 'serial-num': serialNum } = macbook;
+const teamA = ['상혜', '혜진', '지혜', '혜선']
+printMembers(teamA);
 
-console.log(product);
-console.log(serialNum);
-console.log(macbook);
+const codeit = {name: 'codeit'};
+printMembers(codeit);
+
+const teamB = ['영훈', '재훈', '종훈', '정훈']
+printMembers(teamB);
