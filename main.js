@@ -1,22 +1,17 @@
-const spait = [
-  { codeName: 'ApplePie', members: ['스파이', '스파이', '스파이', '스파이', '스파이'] },
-  { codeName: 'BigBoss', members: ['스파이', '스파이', '스과이', '스파이', '스파이'] },
-  { codeName: 'CEO', members: ['스파이', '스파이', '스파이', '습하이', '스파이'] },
-  { codeName: 'DeathNote', members: ['스파이', '스파이', '스파이', '스파이', '스파이'] },
-  { codeName: 'EarlyBird', members: ['스파이', '스마이', '스파이', '스파이', '스파이'] },
-  { codeName: 'Faker', members: ['스파이', '스파이', '스파이', '스파이', '스파이'] },
+const data = [ 
+  { company: 'Naber', month: 3 },
+	{ company: 'Amajohn', month: 12 },
+	{ company: 'Coogle', month: 10 },
+  { company: 'Ittel', month: 6 },
+  { company: 'Sasung', month: 4 },
+  { company: 'CaCao', month: 3 },
+	{ company: 'Microhard', month: 17 },
 ];
 
-function checkSpy(team) {
-  // 여기에 코드를 작성하세요
-  const everyReturn = team.members.every((el) => el === '스파이');
-  
-  const message = everyReturn
-  ? `팀 ${team.codeName} 에는 이중 스파이가 없습니다.`
-  : `[주의!] 팀 ${team.codeName} 에 이중 스파이가 있습니다!`;
+const totalCareer = data.reduce((acc, el) => {
+  return acc + el.month
+}, 0)
 
-	console.log(message);
-}
+// const totalCareer = data.reduce((acc, el) => acc + el.month, 0);
 
-// 테스트 코드
-spait.forEach((team) => checkSpy(team));
+console.log(`상원이의 경력은 총 ${totalCareer}개월입니다.`);
