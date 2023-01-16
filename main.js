@@ -1,12 +1,22 @@
-const seoul = ['김영훈', '김윤수', '김동욱', '강대위', '김영준',
-  '김규식', '김태호', '김효신', '손효준', '김현승', '김재하', '김유나',
-  '김재훈', '김혜선', '김민환', '김규리', '김소원', '김우재', '최영준',
-  '김태순', '김종훈', '김성환', '김승용', '김지혜', '이승욱', '김도현',
-  '김승규', '윤하은', '김유진', '김정민', '김혜정', '김예진', '김여진',
-  '김성희', '김혜수', '김인선', '김상필', '김혜진', '서상원', '김상혜',
-  '김민기', '김그루', '김희지'];
+const spait = [
+  { codeName: 'ApplePie', members: ['스파이', '스파이', '스파이', '스파이', '스파이'] },
+  { codeName: 'BigBoss', members: ['스파이', '스파이', '스과이', '스파이', '스파이'] },
+  { codeName: 'CEO', members: ['스파이', '스파이', '스파이', '습하이', '스파이'] },
+  { codeName: 'DeathNote', members: ['스파이', '스파이', '스파이', '스파이', '스파이'] },
+  { codeName: 'EarlyBird', members: ['스파이', '스마이', '스파이', '스파이', '스파이'] },
+  { codeName: 'Faker', members: ['스파이', '스파이', '스파이', '스파이', '스파이'] },
+];
 
-const notKims = seoul.filter((el) => el[0] !== '김');
+function checkSpy(team) {
+  // 여기에 코드를 작성하세요
+  const everyReturn = team.members.every((el) => el === '스파이');
+  
+  const message = everyReturn
+  ? `팀 ${team.codeName} 에는 이중 스파이가 없습니다.`
+  : `[주의!] 팀 ${team.codeName} 에 이중 스파이가 있습니다!`;
+
+	console.log(message);
+}
 
 // 테스트 코드
-console.log(notKims);
+spait.forEach((team) => checkSpy(team));
