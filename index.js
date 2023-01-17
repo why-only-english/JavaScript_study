@@ -1,19 +1,27 @@
-function printMembers(members) {
-  try {
-    for (const member of members) {
-      console.log(member);
-    }
-  } catch (err) {
-    console.error(err);
-    alert(`${err.name}가 발생했습니다. 콘솔창을 확인해 주세요.`);
-  }
+function createUser(email, birthdate) {
+    const user = {
+        email: email,           // 프로퍼티 파라미터 이름 같으면 생략 가능
+        birthdate: birthdate,
+        buy(item) {
+            console.log(`${this.email} buys ${item.name}`);
+        },
+    };
+    return user;
 }
 
-const teamA = ['상혜', '혜진', '지혜', '혜선']
-printMembers(teamA);
+const user1 = createUser('6813821@tukorea.ac.kr', '2000-08-19');
+const user2 = createUser('7813822@tukorea.ac.kr', '2000-08-11');
+const user3 = createUser('8813823@tukorea.ac.kr', '2000-08-12');
 
-const codeit = {name: 'codeit'};
-printMembers(codeit);
+const item = {
+    name: '스웨터',
+    price: 30000,
+};
 
-const teamB = ['영훈', '재훈', '종훈', '정훈']
-printMembers(teamB);
+console.log(user1.email);
+console.log(user2.email);
+console.log(user3.email);
+
+user1.buy(item);
+user2.buy(item);
+user3.buy(item);
