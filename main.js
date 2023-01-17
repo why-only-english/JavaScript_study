@@ -1,17 +1,25 @@
-const data = [ 
-  { company: 'Naber', month: 3 },
-	{ company: 'Amajohn', month: 12 },
-	{ company: 'Coogle', month: 10 },
-  { company: 'Ittel', month: 6 },
-  { company: 'Sasung', month: 4 },
-  { company: 'CaCao', month: 3 },
-	{ company: 'Microhard', month: 17 },
-];
+// function makeCar(color, speed) {
+//   const car = {
+//     color,
+//     speed,
+//     run() {
+//       console.log(`Runs at ${this.speed}`);
+//     },
+//   };
+//   return car;
+// }
 
-const totalCareer = data.reduce((acc, el) => {
-  return acc + el.month
-}, 0)
+class Car {
+  constructor(color, speed) {
+    this.color = color;
+    this.speed = speed;
+  }
+  
+  run() {
+    console.log(`Runs at ${this.speed}`);
+  }
+}
 
-// const totalCareer = data.reduce((acc, el) => acc + el.month, 0);
+const car1 = new makeCar('blue', '100km/h');
 
-console.log(`상원이의 경력은 총 ${totalCareer}개월입니다.`);
+car1.run();
