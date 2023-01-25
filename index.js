@@ -1,27 +1,23 @@
-function createUser(email, birthdate) {
-    const user = {
-        email: email,           // 프로퍼티 파라미터 이름 같으면 생략 가능
-        birthdate: birthdate,
-        buy(item) {
-            console.log(`${this.email} buys ${item.name}`);
-        },
-    };
-    return user;
-}
+fetch('https://www.google.com')
+    .then((response) => response.text())
+    .then((result) => {console.log(result);});
 
-const user1 = createUser('6813821@tukorea.ac.kr', '2000-08-19');
-const user2 = createUser('7813822@tukorea.ac.kr', '2000-08-11');
-const user3 = createUser('8813823@tukorea.ac.kr', '2000-08-12');
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.text())
+    .then((result) => {console.log(result);});
 
-const item = {
-    name: '스웨터',
-    price: 30000,
-};
+// JSON 데이터를 객체로 변환하기, 배열의 총 길이 출력 
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.text())
+    .then((result) => { 
+        const users = JSON.parse(result);  // 자바스크립트 객체로 변환
+        console.log(users.length);
+        users.forEach(user => {
+            console.log(user.name)
+        });
+    });
 
-console.log(user1.email);
-console.log(user2.email);
-console.log(user3.email);
-
-user1.buy(item);
-user2.buy(item);
-user3.buy(item);
+// GET request
+fetch('https://learn.codeit.kr/api/members')
+    .then((response) => response.text())
+    .then((result) => {console.log(result);});
