@@ -21,3 +21,17 @@ fetch('https://jsonplaceholder.typicode.com/users')
 fetch('https://learn.codeit.kr/api/members')
     .then((response) => response.text())
     .then((result) => {console.log(result);});
+
+// POST request
+const newMember = {
+    name: 'Jerry',
+    email: 'jerry@codeitmmall.kr',
+    department: 'engineering',
+};
+fetch('https://learn.codeit.kr/api/members', {
+    method: 'POST',
+    body: JSON.stringify(newMember),   // pasre 메서드와 반대
+})
+    .then((response) => response.text())
+    .then((result) => {console.log(result);});
+
