@@ -28,9 +28,31 @@ const newMember = {
     email: 'jerry@codeitmmall.kr',
     department: 'engineering',
 };
+
 fetch('https://learn.codeit.kr/api/members', {
     method: 'POST',
     body: JSON.stringify(newMember),   // pasre 메서드와 반대
+})
+    .then((response) => response.text())
+    .then((result) => {console.log(result);});
+
+// PUT request
+const Member = {
+    name: 'Alice',
+    email: 'alice@codeitmmall.kr',
+    department: 'marketing',
+};
+
+fetch('https://learn.codeit.kr/api/members/2', {
+    method: 'PUT',
+    body: JSON.stringify(Member),   // string 객체로 변환
+})
+    .then((response) => response.text())
+    .then((result) => {console.log(result);});
+
+// DELETE request
+fetch('https://learn.codeit.kr/api/members/2', {
+    method: 'DELETE',     // DELETE 리퀘스트는 바디 필요 X
 })
     .then((response) => response.text())
     .then((result) => {console.log(result);});
