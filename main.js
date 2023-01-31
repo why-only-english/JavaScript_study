@@ -1,35 +1,28 @@
-function pick(menus) {
-  console.log('Pick random menu!');
-  const p = new Promise((resolve, reject) => {
-    if (menus.length === 0) {
-      reject(new Error('Need Candidates'));
-    } else {
-      setTimeout(() => {
-        const randomIdx = Math.floor(Math.random() * menus.length);
-        const selectedMenu = menus[randomIdx];
-        resolve(selectedMenu);
-      }, 1000); // 시간이 걸리는 걸 시뮬레이션하기 위한 1초입니다
-    }
-  });
-  return p;
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((response) => response.json())
+//   .then((users) => {
+//     const lastUser = users[users.length - 1];
+//     return lastUser.id;
+//   })
+//   .then((id) => fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`))
+//   .then((response) => response.json())
+//   .then((posts) => {
+//     const lastPost = posts[posts.length - 1];
+//     console.log(lastPost);
+//   });
+
+// async/await 구문으로 실행 코드 작성(비동기 실행)
+async function getTheLastPostOfTheLastUser() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const users = await response.json();
+  const lastUser = users[users.length - 1];
+  const { id } = lastUser;
+  const postsJSON = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`);
+  const posts = await postsJSON.json();
+  const lastPost = posts[posts.length - 1];
+  return lastPost;
 }
 
-function getRandomMenu() {
-  return fetch('https://learn.codeit.kr/api/menus')
-    .then((response) => response.json())
-    .then((result) => {
-      const menus = result;
-      return pick(menus); // ! random pick function
-    });
-}
-
-getRandomMenu()
-  .then((menu) => {
-    console.log(`Today's lunch is ${menu.name} ~`);
-  })
-  .catch((error) => {
-    console.log(error.message);
-  })
-  .finally(() => {
-    console.log('Random Menu candidates change everyday');
-  });
+getTheLastPostOfTheLastUser().then((lastPost) => {
+  console.log(lastPost);
+});
